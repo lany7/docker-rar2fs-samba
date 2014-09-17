@@ -1,0 +1,2 @@
+docker build -t joelpet/rar2fs .
+docker run --privileged -d -v "$RAR2FS_SOURCE_DIR":/mnt/source -v "$RAR2FS_DEST_DIR":/mnt/mountpoint joelpet/rar2fs
