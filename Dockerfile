@@ -23,16 +23,18 @@ RUN ./configure; make; make install
 # Configure Samba server
 ADD smb.conf /etc/samba/smb.conf
 
+# Install entrypoint script
+ADD entrypoint.sh /src/
+RUN install /src/entrypoint.sh /usr/local/bin
+
 WORKDIR /
 
 VOLUME /mnt/source
 VOLUME /mnt/mountpoint
 
-RUN service samba start
-
 EXPOSE 445
 EXPOSE 139
 EXPOSE 135
 
-ENTRYPOINT ["rar2fs", "-f", "-d"]
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["/mnt/source", "/mnt/mountpoint"]
