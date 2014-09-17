@@ -27,6 +27,9 @@ ADD smb.conf /etc/samba/smb.conf
 ADD entrypoint.sh /src/
 RUN install /src/entrypoint.sh /usr/local/bin
 
+# Clean up sources
+RUN rm -r /src
+
 WORKDIR /
 
 VOLUME /mnt/source
