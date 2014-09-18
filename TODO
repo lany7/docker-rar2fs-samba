@@ -1,0 +1,4 @@
+Some notes on colliding ports between host and container:
+
+<larsks> joelpet: give your host another ip address, bind the host services explicitl to the original ip address, and then bind the docker ports to the new ip address.
+<cpuguy83> joelpet: Well, you can bind to a specific host interface...so assuming you didn't bind to 0.0.0.0 on the host already, you can do "-p x.x.x.x:135:135", for example.
