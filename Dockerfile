@@ -34,7 +34,7 @@ WORKDIR /
 VOLUME /mnt/source
 VOLUME /mnt/mountpoint
 
-EXPOSE 42 135 137 138 139 445
+EXPOSE 135 137 138 139 445
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["/mnt/source", "/mnt/mountpoint"]
