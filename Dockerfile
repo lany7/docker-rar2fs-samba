@@ -35,7 +35,7 @@ VOLUME /mnt/source
 VOLUME /mnt/mountpoint
 
 # Expose smbd and nmbd ports
-EXPOSE 135 139 445
+EXPOSE 139/tcp 445/tcp
 EXPOSE 137/udp 138/udp
 
 ENTRYPOINT ["entrypoint.sh"]
