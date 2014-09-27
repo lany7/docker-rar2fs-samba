@@ -1,2 +1,2 @@
 docker build -t joelpet/rar2fs-samba .
-docker run --privileged -d -v "$RAR2FS_SOURCE_DIR":/mnt/source joelpet/rar2fs-samba
+sudo docker run --name rar2fs-samba -d --privileged -p 135:135 -p 137:137 -p 138:138 -p 139:139 -p 445:445 -v "${RAR2FS_SOURCE_DIR}":/mnt/source joelpet/rar2fs-samba
