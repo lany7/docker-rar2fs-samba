@@ -34,7 +34,9 @@ WORKDIR /
 VOLUME /mnt/source
 VOLUME /mnt/mountpoint
 
-EXPOSE 135 137 138 139 445
+# Expose smbd and nmbd ports
+EXPOSE 135 139 445
+EXPOSE 137/udp 138/udp
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["/mnt/source", "/mnt/mountpoint"]
