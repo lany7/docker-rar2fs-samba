@@ -2,10 +2,11 @@ FROM joelpet/debian:jessie
 
 RUN sed --in-place 's/ftp.us.debian.org/ftp.se.debian.org/' /etc/apt/sources.list
 
-RUN apt-get update && apt-get -y install \
-    build-essential \
-    libfuse-dev \
-    samba
+RUN ( \
+        export DEBIAN_FRONTEND=noninteractive; \
+        apt-get update && \
+        apt-get -y install build-essential libfuse-dev samba \
+    )
 
 # Add rar2fs and unrar source
 ADD rar2fs-1.20.0.tar.gz /src/
