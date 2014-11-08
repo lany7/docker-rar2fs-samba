@@ -2,7 +2,7 @@ FROM joelpet/debian:testing
 
 RUN sed --in-place 's/ftp.us.debian.org/ftp.se.debian.org/' /etc/apt/sources.list
 
-RUN apt-get update && apt-get -y upgrade && apt-get -y install \
+RUN apt-get update && apt-get -y install \
     build-essential \
     libfuse-dev \
     samba
