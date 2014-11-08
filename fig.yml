@@ -1,6 +1,7 @@
 core:
     build: .
     privileged: true
+    net: "host"
     ports:
         - "137:137/udp"
         - "138:138/udp"
