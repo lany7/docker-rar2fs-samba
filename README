@@ -1,2 +1,15 @@
-docker build -t joelpet/rar2fs-samba .
-sudo docker run --name rar2fs-samba -d --privileged -p 135:135 -p 137:137/udp -p 138:138/udp -p 139:139 -p 445:445 -v "${RAR2FS_SOURCE_DIR}":/mnt/source joelpet/rar2fs-samba
+rar2fs + Samba
+==============
+
+This docker image makes a given directory containing RAR archives available on
+the network through SMB as if the archives were extracted.
+
+Note that it is running in privileged mode with net=host, which means a
+container is far from fully isolated from the host system.
+
+Usage
+-----
+
+```bash
+fig up -d
+```
