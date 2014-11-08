@@ -1,4 +1,4 @@
-FROM joelpet/debian:testing
+FROM joelpet/debian:jessie
 
 RUN sed --in-place 's/ftp.us.debian.org/ftp.se.debian.org/' /etc/apt/sources.list
 
