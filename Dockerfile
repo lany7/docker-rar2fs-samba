@@ -20,6 +20,9 @@ RUN make lib install-lib
 WORKDIR /src/rar2fs-1.20.0
 RUN ./configure; make; make install
 
+# Add rar2fs exclude file filter
+ADD rar2fs_exclude-file-filter /etc/
+
 # Configure Samba server
 ADD smb.conf /etc/samba/smb.conf
 
