@@ -2,4 +2,4 @@
 
 service samba start
 
-rar2fs -f "${1}" "${2}"
+rar2fs -f --exclude=".wd_tv" "${1}" "${2}"
