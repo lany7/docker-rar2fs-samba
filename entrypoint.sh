@@ -2,4 +2,4 @@
 
 service samba start
 
-rar2fs -d -f "${1}" "${2}"
+rar2fs -f "${1}" "${2}"
