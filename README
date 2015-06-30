@@ -11,5 +11,6 @@ Usage
 -----
 
 ```bash
-fig up -d
+docker-compose build
+docker-compose up -d
 ```
