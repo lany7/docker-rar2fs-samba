@@ -1,9 +1,8 @@
 FROM joelpet/debian:jessie
 
-RUN sed --in-place 's/ftp.us.debian.org/ftp.se.debian.org/' /etc/apt/sources.list
-
 RUN ( \
         export DEBIAN_FRONTEND=noninteractive; \
+        sed --in-place 's/ftp.us.debian.org/ftp.se.debian.org/' /etc/apt/sources.list && \
         apt-get update && \
         apt-get -y install build-essential libfuse-dev samba \
     )
