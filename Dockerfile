@@ -1,4 +1,4 @@
-FROM joelpet/debian:jessie
+FROM debian:jessie
 
 RUN ( \
         export DEBIAN_FRONTEND=noninteractive; \
